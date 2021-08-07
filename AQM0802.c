@@ -1,6 +1,7 @@
 #include "AQM0802.h"
 #include <xc.h>
 #include <stdio.h>
+#include <stdint.h>
 
 #define _XTAL_FREQ 3200000
 

@@ -11,19 +11,46 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\raimu\AppData\Local\Temp\sapk.o
+$C:\Users\raimu\AppData\Local\Temp\s1oo.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
 config CONFIG 4 8007 8007 5 2
 $dist/default/production\InvertedPendulum.X.production.o
-cinit CODE 0 7EC 7EC 14 2
-text1 CODE 0 751 751 3E 2
-text2 CODE 0 78F 78F 5D 2
-idataCOMMON CODE 0 740 740 4 2
-maintext CODE 0 744 744 D 2
-cstackCOMMON COMMON 1 70 70 7 1
-dataCOMMON COMMON 1 77 77 4 1
-bssCOMMON COMMON 1 7B 7B 1 1
+cinit CODE 0 7E4 7E4 1C 2
+text1 CODE 0 3E 3E 16 2
+text2 CODE 0 163 163 31 2
+text3 CODE 0 527 527 14F 2
+text4 CODE 0 676 676 16E 2
+text5 CODE 0 1D4 1D4 59 2
+text6 CODE 0 6C 6C 19 2
+text7 CODE 0 DF DF 28 2
+text8 CODE 0 194 194 40 2
+text9 CODE 0 FC9 FC9 6 2
+text10 CODE 0 FF2 FF2 E 2
+text11 CODE 0 85 85 1A 2
+text12 CODE 0 33C 33C EA 2
+text13 CODE 0 426 426 101 2
+text14 CODE 0 28D 28D AF 2
+text15 CODE 0 BE BE 21 2
+text16 CODE 0 54 54 18 2
+text17 CODE 0 9F 9F 1F 2
+text18 CODE 0 1B 1B F 2
+text19 CODE 0 107 107 2C 2
+text20 CODE 0 C C F 2
+text21 CODE 0 2A 2A 14 2
+text22 CODE 0 FDA FDA B 2
+text23 CODE 0 FCF FCF B 2
+text24 CODE 0 FE5 FE5 D 2
+text25 CODE 0 22D 22D 60 2
+maintext CODE 0 133 133 30 2
+cstackCOMMON COMMON 1 70 70 E 1
+cstackBANK0 BANK0 1 20 20 50 1
+cstackBANK1 BANK1 1 C9 C9 8 1
+stringtext1 STRCODE 0 1000 1000 5 2
+bssBANK1 BANK1 1 A0 A0 29 1
+idataBANK1 CODE 0 FC5 FC5 4 2
+dataBANK1 BANK1 1 D1 D1 4 1
+clrtext CODE 0 6 6 6 2
 config CONFIG 4 8007 8007 5 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -31,8 +58,7 @@ config CONFIG 4 8007 8007 5 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 20-6F 1
-RAM A0-EF 1
+RAM D5-EF 1
 RAM 120-16F 1
 RAM 1A0-1EF 1
 RAM 220-26F 1
@@ -82,8 +108,7 @@ RAM 17A0-17EF 1
 RAM 1820-186F 1
 RAM 18A0-18EF 1
 RAM 1920-196F 1
-BANK0 20-6F 1
-BANK1 A0-EF 1
+BANK1 D5-EF 1
 BANK2 120-16F 1
 BANK3 1A0-1EF 1
 BANK4 220-26F 1
@@ -92,10 +117,12 @@ BANK6 320-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
-CONST 4-73F 2
-CONST 800-7FFF 2
-ENTRY 4-73F 2
-ENTRY 800-7FFF 2
+CONST 4-5 2
+CONST 800-FC4 2
+CONST 1005-7FFF 2
+ENTRY 4-5 2
+ENTRY 800-FC4 2
+ENTRY 1005-7FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -151,9 +178,10 @@ SFR60 1E00-1E6F 1
 SFR61 1E80-1EEF 1
 SFR62 1F00-1F6F 1
 SFR63 1F80-1FEF 1
-STACK 2000-2FEF 1
-CODE 4-73F 2
-CODE 800-7FFF 2
+STACK 2085-2FEF 1
+CODE 4-5 2
+CODE 800-FC4 2
+CODE 1005-7FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -206,12 +234,13 @@ BANK48 1820-186F 1
 BANK49 18A0-18EF 1
 BANK50 1920-196F 1
 BIGRAM 2000-2FEF 1
-COMMON 7C-7D 1
 EEDATA F000-F0FF 2
-STRCODE 4-73F 2
-STRCODE 800-7FFF 2
-STRING 4-73F 2
-STRING 800-7FFF 2
+STRCODE 4-5 2
+STRCODE 800-FC4 2
+STRCODE 1005-7FFF 2
+STRING 4-5 2
+STRING 800-FC4 2
+STRING 1005-7FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -226,62 +255,313 @@ STRING 800-7FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\InvertedPendulum.X.production.o
-7EC cinit CODE >2263:C:\Users\raimu\AppData\Local\Temp\sapk.s
-7EC cinit CODE >2266:C:\Users\raimu\AppData\Local\Temp\sapk.s
-7EC cinit CODE >2286:C:\Users\raimu\AppData\Local\Temp\sapk.s
-7EF cinit CODE >2287:C:\Users\raimu\AppData\Local\Temp\sapk.s
-7F0 cinit CODE >2288:C:\Users\raimu\AppData\Local\Temp\sapk.s
-7F3 cinit CODE >2289:C:\Users\raimu\AppData\Local\Temp\sapk.s
-7F4 cinit CODE >2290:C:\Users\raimu\AppData\Local\Temp\sapk.s
-7F7 cinit CODE >2291:C:\Users\raimu\AppData\Local\Temp\sapk.s
-7F8 cinit CODE >2292:C:\Users\raimu\AppData\Local\Temp\sapk.s
-7FB cinit CODE >2293:C:\Users\raimu\AppData\Local\Temp\sapk.s
-7FC cinit CODE >2298:C:\Users\raimu\AppData\Local\Temp\sapk.s
-7FD cinit CODE >2304:C:\Users\raimu\AppData\Local\Temp\sapk.s
-7FD cinit CODE >2306:C:\Users\raimu\AppData\Local\Temp\sapk.s
-7FE cinit CODE >2307:C:\Users\raimu\AppData\Local\Temp\sapk.s
-78F text2 CODE >60:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-78F text2 CODE >63:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-797 text2 CODE >65:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-7A9 text2 CODE >66:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-7BB text2 CODE >67:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-7CD text2 CODE >68:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-7D9 text2 CODE >69:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-7E0 text2 CODE >71:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-7E4 text2 CODE >72:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-7EB text2 CODE >73:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-751 text1 CODE >81:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-751 text1 CODE >84:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-756 text1 CODE >85:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-758 text1 CODE >86:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-75C text1 CODE >89:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-75E text1 CODE >90:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-75F text1 CODE >91:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-760 text1 CODE >92:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-762 text1 CODE >93:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-763 text1 CODE >94:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-765 text1 CODE >96:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-768 text1 CODE >97:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-769 text1 CODE >105:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-76C text1 CODE >106:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-76E text1 CODE >107:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-76F text1 CODE >114:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-771 text1 CODE >115:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-774 text1 CODE >116:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-776 text1 CODE >118:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-779 text1 CODE >119:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-77C text1 CODE >122:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-77F text1 CODE >123:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-781 text1 CODE >124:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-782 text1 CODE >127:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-785 text1 CODE >128:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-786 text1 CODE >129:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-788 text1 CODE >130:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-78A text1 CODE >131:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-78E text1 CODE >134:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-744 maintext CODE >75:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-744 maintext CODE >76:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
-747 maintext CODE >77:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+7E4 cinit CODE >3379:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7E4 cinit CODE >3382:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7E4 cinit CODE >3417:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7E5 cinit CODE >3418:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7E8 cinit CODE >3419:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7E9 cinit CODE >3420:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7EC cinit CODE >3421:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7ED cinit CODE >3422:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7F0 cinit CODE >3423:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7F1 cinit CODE >3424:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7F4 cinit CODE >3425:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7F5 cinit CODE >3442:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7F6 cinit CODE >3443:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7F7 cinit CODE >3444:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7F8 cinit CODE >3445:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7F9 cinit CODE >3446:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7FA cinit CODE >3447:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7FD cinit CODE >3453:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7FD cinit CODE >3455:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7FE cinit CODE >3456:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+22D text25 CODE >94:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+22D text25 CODE >97:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+232 text25 CODE >98:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+234 text25 CODE >99:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+238 text25 CODE >102:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+23A text25 CODE >103:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+23B text25 CODE >104:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+23D text25 CODE >105:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+23F text25 CODE >106:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+241 text25 CODE >107:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+243 text25 CODE >110:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+246 text25 CODE >111:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+247 text25 CODE >119:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+249 text25 CODE >120:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+24B text25 CODE >121:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+24C text25 CODE >122:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+24E text25 CODE >125:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+251 text25 CODE >126:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+253 text25 CODE >127:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+255 text25 CODE >128:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+257 text25 CODE >132:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+25A text25 CODE >133:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+25C text25 CODE >134:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+25D text25 CODE >138:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+25F text25 CODE >139:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+262 text25 CODE >140:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+265 text25 CODE >141:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+268 text25 CODE >145:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+26B text25 CODE >146:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+26E text25 CODE >147:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+271 text25 CODE >148:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+274 text25 CODE >151:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+277 text25 CODE >152:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+27A text25 CODE >155:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+27D text25 CODE >156:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+27F text25 CODE >157:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+280 text25 CODE >160:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+283 text25 CODE >161:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+284 text25 CODE >162:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+286 text25 CODE >163:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+288 text25 CODE >164:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+28C text25 CODE >167:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+FE5 text24 CODE >40:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FE6 text24 CODE >45:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FE8 text24 CODE >46:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FEB text24 CODE >47:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FF0 text24 CODE >48:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FF1 text24 CODE >51:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FCF text23 CODE >12:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FCF text23 CODE >18:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FD1 text23 CODE >19:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FD3 text23 CODE >20:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FD8 text23 CODE >21:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FD9 text23 CODE >24:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FDA text22 CODE >26:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FDA text22 CODE >32:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FDC text22 CODE >33:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FDE text22 CODE >34:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FE3 text22 CODE >35:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FE4 text22 CODE >38:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+2A text21 CODE >69:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+2B text21 CODE >71:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+2E text21 CODE >72:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+32 text21 CODE >73:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+36 text21 CODE >74:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+3A text21 CODE >75:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+3D text21 CODE >78:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+C text20 CODE >80:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+D text20 CODE >83:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+16 text20 CODE >88:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+1A text20 CODE >91:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+107 text19 CODE >106:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+107 text19 CODE >109:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+10B text19 CODE >110:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+10F text19 CODE >111:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+113 text19 CODE >112:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+117 text19 CODE >113:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+11B text19 CODE >114:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+11F text19 CODE >117:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+126 text19 CODE >120:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+12A text19 CODE >121:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+12E text19 CODE >122:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+132 text19 CODE >125:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+1B text18 CODE >134:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+1C text18 CODE >136:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+29 text18 CODE >139:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+9F text17 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
+9F text17 CODE >43:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
+A1 text17 CODE >45:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
+A5 text17 CODE >46:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
+A9 text17 CODE >47:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
+AE text17 CODE >48:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
+B3 text17 CODE >49:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
+B9 text17 CODE >52:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
+BD text17 CODE >53:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
+54 text16 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\isdigit.c
+54 text16 CODE >7:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\isdigit.c
+6B text16 CODE >8:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\isdigit.c
+BE text15 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\isspace.c
+BE text15 CODE >7:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\isspace.c
+DE text15 CODE >8:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\isspace.c
+28D text14 CODE >4:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\atoi.c
+28D text14 CODE >6:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\atoi.c
+292 text14 CODE >7:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\atoi.c
+2C6 text14 CODE >9:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\atoi.c
+2CA text14 CODE >10:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\atoi.c
+2CE text14 CODE >11:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\atoi.c
+2E3 text14 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\atoi.c
+303 text14 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\atoi.c
+325 text14 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\atoi.c
+33B text14 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\atoi.c
+426 text13 CODE >7:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+426 text13 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+427 text13 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+431 text13 CODE >17:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+450 text13 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+452 text13 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+45C text13 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+47B text13 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+47F text13 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+489 text13 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+496 text13 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+498 text13 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+499 text13 CODE >28:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+4A1 text13 CODE >29:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+4A5 text13 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+4A9 text13 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+4B1 text13 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+4D3 text13 CODE >34:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+4E3 text13 CODE >35:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+4E4 text13 CODE >37:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+4EC text13 CODE >38:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+4F2 text13 CODE >40:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+4F7 text13 CODE >41:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+515 text13 CODE >42:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+526 text13 CODE >43:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aodiv.c
+33C text12 CODE >7:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+33C text12 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+33D text12 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+347 text12 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+366 text12 CODE >17:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+368 text12 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+372 text12 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+391 text12 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+39E text12 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+3A0 text12 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+3A1 text12 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+3A9 text12 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+3AD text12 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+3B1 text12 CODE >28:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+3D3 text12 CODE >29:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+3E3 text12 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+3EB text12 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+3F1 text12 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+3F6 text12 CODE >34:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+414 text12 CODE >35:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+425 text12 CODE >36:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aomod.c
+85 text11 CODE >1:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\abs.c
+85 text11 CODE >3:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\abs.c
+9E text11 CODE >4:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\abs.c
+FF2 text10 CODE >93:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FF3 text10 CODE >96:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FFF text10 CODE >104:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FC9 text9 CODE >141:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FCA text9 CODE >143:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+FCE text9 CODE >146:C:\Users\raimu\PIC\InvertedPendulum.X\AQM0802.c
+194 text8 CODE >8:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputc.c
+194 text8 CODE >12:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputc.c
+19E text8 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputc.c
+1A2 text8 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputc.c
+1A3 text8 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputc.c
+1CB text8 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputc.c
+1D3 text8 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputc.c
+DF text7 CODE >8:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputs.c
+E1 text7 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputs.c
+E3 text7 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputs.c
+E4 text7 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputs.c
+F2 text7 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputs.c
+F7 text7 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputs.c
+106 text7 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputs.c
+6C text6 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\strlen.c
+6D text6 CODE >7:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\strlen.c
+71 text6 CODE >8:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\strlen.c
+72 text6 CODE >9:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\strlen.c
+76 text6 CODE >8:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\strlen.c
+7E text6 CODE >11:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\strlen.c
+84 text6 CODE >12:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\strlen.c
+1D4 text5 CODE >72:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+1D6 text5 CODE >77:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+1DB text5 CODE >78:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+1E4 text5 CODE >82:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+1F0 text5 CODE >83:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+1F2 text5 CODE >84:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+1F3 text5 CODE >85:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+1FF text5 CODE >86:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+204 text5 CODE >84:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+212 text5 CODE >90:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+217 text5 CODE >91:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+220 text5 CODE >92:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+220 text5 CODE >94:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+22C text5 CODE >95:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+676 text4 CODE >287:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+678 text4 CODE >293:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+688 text4 CODE >294:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+69B text4 CODE >295:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+6A1 text4 CODE >296:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+6BF text4 CODE >297:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+6BF text4 CODE >300:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+6C4 text4 CODE >301:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+6C8 text4 CODE >302:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+6C8 text4 CODE >303:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+6E5 text4 CODE >304:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+6ED text4 CODE >305:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+6F8 text4 CODE >306:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+6FD text4 CODE >307:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+6FD text4 CODE >310:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+702 text4 CODE >311:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+704 text4 CODE >312:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+705 text4 CODE >313:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+70A text4 CODE >314:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+738 text4 CODE >315:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+73C text4 CODE >316:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+740 text4 CODE >317:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+76D text4 CODE >312:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+76D text4 CODE >318:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+7A8 text4 CODE >321:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+7B4 text4 CODE >322:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+7B9 text4 CODE >323:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+7D0 text4 CODE >327:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+7E3 text4 CODE >328:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+527 text3 CODE >692:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+529 text3 CODE >702:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+53A text3 CODE >703:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+542 text3 CODE >705:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+547 text3 CODE >706:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+54B text3 CODE >745:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+55D text3 CODE >746:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+565 text3 CODE >747:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+572 text3 CODE >748:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+576 text3 CODE >749:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+577 text3 CODE >750:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+57D text3 CODE >753:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+58C text3 CODE >754:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+58D text3 CODE >755:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+595 text3 CODE >754:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+5BF text3 CODE >847:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+5E2 text3 CODE >849:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+5EA text3 CODE >850:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+603 text3 CODE >852:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+61D text3 CODE >1372:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+62E text3 CODE >1373:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+636 text3 CODE >1374:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+641 text3 CODE >1375:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+647 text3 CODE >1379:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+64F text3 CODE >1380:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+652 text3 CODE >1384:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+66B text3 CODE >1385:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+675 text3 CODE >1387:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+163 text2 CODE >1390:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+165 text2 CODE >1395:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+169 text2 CODE >1396:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+16C text2 CODE >1397:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+16D text2 CODE >1398:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+181 text2 CODE >1397:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+18B text2 CODE >1400:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+193 text2 CODE >1404:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+3E text1 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\printf.c
+3E text1 CODE >9:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\printf.c
+43 text1 CODE >10:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\printf.c
+53 text1 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\printf.c
+133 maintext CODE >79:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+133 maintext CODE >80:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+136 maintext CODE >81:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+139 maintext CODE >82:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+145 maintext CODE >85:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+14B maintext CODE >86:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+14D maintext CODE >87:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+151 maintext CODE >88:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+155 maintext CODE >89:C:\Users\raimu\PIC\InvertedPendulum.X\main.c
+6 clrtext CODE >3431:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+6 clrtext CODE >3432:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7 clrtext CODE >3433:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+7 clrtext CODE >3434:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+8 clrtext CODE >3435:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+9 clrtext CODE >3436:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+A clrtext CODE >3437:C:\Users\raimu\AppData\Local\Temp\s1oo.s
+B clrtext CODE >3438:C:\Users\raimu\AppData\Local\Temp\s1oo.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -295,54 +575,115 @@ $dist/default/production\InvertedPendulum.X.production.o
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 4 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
-__Hspace_0 800 0 ABS 0 - -
-__Hspace_1 7C 0 ABS 0 - -
+__size_of_i2cProtocolSendData 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__LdataBANK1 0 0 ABS 0 dataBANK1 -
+__Hspace_0 1005 0 ABS 0 - -
+__Hspace_1 D5 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 10013 0 ABS 0 - -
+__size_of_lcdI2CProtocol 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__HidataBANK1 0 0 ABS 0 idataBANK1 -
+_lcdSendCharacterData 1FE4 0 CODE 0 text10 dist/default/production\InvertedPendulum.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
+?_abs 73 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+?_pad 2C 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\raimu\AppData\Local\Temp\sapk.o
-_init EA2 0 CODE 0 text1 dist/default/production\InvertedPendulum.X.production.o
-_main E88 0 CODE 0 maintext dist/default/production\InvertedPendulum.X.production.o
+?_vfprintf 65 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+_ADGO 498 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\raimu\AppData\Local\Temp\s1oo.o
+_atoi 51A 0 CODE 0 text14 dist/default/production\InvertedPendulum.X.production.o
+_dbuf A9 0 BANK1 1 bssBANK1 dist/default/production\InvertedPendulum.X.production.o
+_dtoa CEC 0 CODE 0 text4 dist/default/production\InvertedPendulum.X.production.o
+_init 45A 0 CODE 0 text25 dist/default/production\InvertedPendulum.X.production.o
+_main 266 0 CODE 0 maintext dist/default/production\InvertedPendulum.X.production.o
+_nout A0 0 BANK1 1 bssBANK1 dist/default/production\InvertedPendulum.X.production.o
+_prec A4 0 BANK1 1 bssBANK1 dist/default/production\InvertedPendulum.X.production.o
+abs@a 73 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
-start 4 0 CODE 0 init C:\Users\raimu\AppData\Local\Temp\sapk.o
+pad@i 2F 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+pad@p 2D 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+pad@w 31 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+start 4 0 CODE 0 init C:\Users\raimu\AppData\Local\Temp\s1oo.o
+___aomod@counter 71 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+__size_of___aodiv 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__size_of___aomod 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__size_of_atoi 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__size_of_dtoa 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 __size_of_init 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
-__HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCFRQbits 893 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+pad@fp 33 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+__end_of_lcdLocateCursor 54 0 CODE 0 text18 dist/default/production\InvertedPendulum.X.production.o
+?___wmul 70 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+__LidataBANK1 0 0 ABS 0 idataBANK1 -
 __Hpowerup 0 0 CODE 0 powerup -
-__HdataCOMMON 0 0 ABS 0 dataCOMMON -
-intlevel0 0 0 ENTRY 0 functab C:\Users\raimu\AppData\Local\Temp\sapk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\raimu\AppData\Local\Temp\sapk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\raimu\AppData\Local\Temp\sapk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\raimu\AppData\Local\Temp\sapk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\raimu\AppData\Local\Temp\sapk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\raimu\AppData\Local\Temp\sapk.o
-__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+_i2cProtocolSendData 1FCA 0 CODE 0 text24 dist/default/production\InvertedPendulum.X.production.o
+__end_of_vfpfcnvrt CEC 0 CODE 0 text3 dist/default/production\InvertedPendulum.X.production.o
+__size_of_vfpfcnvrt 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\raimu\AppData\Local\Temp\s1oo.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\raimu\AppData\Local\Temp\s1oo.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\raimu\AppData\Local\Temp\s1oo.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\raimu\AppData\Local\Temp\s1oo.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\raimu\AppData\Local\Temp\s1oo.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\raimu\AppData\Local\Temp\s1oo.o
 wtemp0 7E 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
+__size_of_i2cProtocolStop 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__pidataCOMMON E80 0 CODE 0 idataCOMMON dist/default/production\InvertedPendulum.X.production.o
+_vfpfcnvrt A4E 0 CODE 0 text3 dist/default/production\InvertedPendulum.X.production.o
+dtoa@fp 43 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+___wmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+lcdI2CProtocol@address 73 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+_ADCON0 93 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _ANSELA 1F38 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _ANSELB 1F43 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _ANSELC 1F4E 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
-__LdataCOMMON 0 0 ABS 0 dataCOMMON -
-forward1@t 70 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+_lcdLocateCursor 36 0 CODE 0 text18 dist/default/production\InvertedPendulum.X.production.o
+_vfpfcnvrt$865 62 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+__end_of___wmul 17C 0 CODE 0 text17 dist/default/production\InvertedPendulum.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 2FEF 0 ABS 0 - C:\Users\raimu\AppData\Local\Temp\sapk.o
-___stacklo 2000 0 ABS 0 - C:\Users\raimu\AppData\Local\Temp\sapk.o
-__LidataCOMMON 0 0 ABS 0 idataCOMMON -
-start_initialization FD8 0 CODE 0 cinit dist/default/production\InvertedPendulum.X.production.o
-forward1@cnt 7B 0 COMMON 1 bssCOMMON dist/default/production\InvertedPendulum.X.production.o
+?_printf C9 0 BANK1 1 cstackBANK1 dist/default/production\InvertedPendulum.X.production.o
+__end_of___aodiv A4E 0 CODE 0 text13 dist/default/production\InvertedPendulum.X.production.o
+__end_of___aomod 84C 0 CODE 0 text12 dist/default/production\InvertedPendulum.X.production.o
+lcdSendCommandData@command 75 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+__size_of_isdigit 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__size_of_isspace 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+___aodiv@quotient 73 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+?_strlen 70 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+___stackhi 2FEF 0 ABS 0 - C:\Users\raimu\AppData\Local\Temp\s1oo.o
+___stacklo 2085 0 ABS 0 - C:\Users\raimu\AppData\Local\Temp\s1oo.o
+___aomod@dividend 28 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+_i2cProtocolStart 1F9E 0 CODE 0 text23 dist/default/production\InvertedPendulum.X.production.o
+__size_of_fputc 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__size_of_fputs 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__size_of_putch 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__end_of_i2cProtocolSendData 1FE4 0 CODE 0 text24 dist/default/production\InvertedPendulum.X.production.o
+___aomod@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+start_initialization FC8 0 CODE 0 cinit dist/default/production\InvertedPendulum.X.production.o
+_SSP2CON2bits 19B 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__end_of_lcdSendCommandData 36 0 CODE 0 text20 dist/default/production\InvertedPendulum.X.production.o
+forward1@cnt A8 0 BANK1 1 bssBANK1 dist/default/production\InvertedPendulum.X.production.o
+_RB0PPS 1F18 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+_RB1PPS 1F19 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _RC1PPS 1F21 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _RC1STA 11D 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
-_RC3PPS 1F23 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _RC5PPS 1F25 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+_RC6PPS 1F26 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+_ADREFbits 9A 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+clear_ram0 C 0 CODE 0 clrtext dist/default/production\InvertedPendulum.X.production.o
 _SP1BRG 11B 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+__pcstackBANK1 C9 0 BANK1 1 cstackBANK1 dist/default/production\InvertedPendulum.X.production.o
+_SSP2IF 387A 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _TX1STA 11E 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
-forward1@F12376 77 0 COMMON 1 dataCOMMON dist/default/production\InvertedPendulum.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\raimu\AppData\Local\Temp\sapk.o
+_dtoa$850 3F 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+__end_of_printf A8 0 CODE 0 text1 dist/default/production\InvertedPendulum.X.production.o
+__size_of_lcdLocateCursor 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+fputc@fp 7A 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+fputs@fp 7B 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+forward1@F12394 D1 0 BANK1 1 dataBANK1 dist/default/production\InvertedPendulum.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\raimu\AppData\Local\Temp\s1oo.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -354,6 +695,7 @@ __Hbank7 0 0 ABS 0 bank7 -
 __Hbank8 0 0 ABS 0 bank8 -
 __Hbank9 0 0 ABS 0 bank9 -
 __Hcinit 1000 0 CODE 0 cinit -
+__end_of_strlen 10A 0 CODE 0 text6 dist/default/production\InvertedPendulum.X.production.o
 __Hsfr10 0 0 ABS 0 sfr10 -
 __Hsfr11 0 0 ABS 0 sfr11 -
 __Hsfr12 0 0 ABS 0 sfr12 -
@@ -463,6 +805,7 @@ __Hbank60 0 0 BANK60 1 bank60 -
 __Hbank61 0 0 BANK61 1 bank61 -
 __Hbank62 0 0 BANK62 1 bank62 -
 __Hbank63 0 0 BANK63 1 bank63 -
+_lcdSendCommandData 18 0 CODE 0 text20 dist/default/production\InvertedPendulum.X.production.o
 __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
 _BAUD1CON 11F 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
@@ -478,7 +821,9 @@ __Lbank6 0 0 ABS 0 bank6 -
 __Lbank7 0 0 ABS 0 bank7 -
 __Lbank8 0 0 ABS 0 bank8 -
 __Lbank9 0 0 ABS 0 bank9 -
-__Lcinit FD8 0 CODE 0 cinit -
+__end_of_isdigit D8 0 CODE 0 text16 dist/default/production\InvertedPendulum.X.production.o
+__Lcinit FC8 0 CODE 0 cinit -
+__end_of_isspace 1BE 0 CODE 0 text15 dist/default/production\InvertedPendulum.X.production.o
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
 __Lsfr12 0 0 ABS 0 sfr12 -
@@ -534,6 +879,9 @@ __Lsfr61 0 0 ABS 0 sfr61 -
 __Lsfr62 0 0 ABS 0 sfr62 -
 __Lsfr63 0 0 ABS 0 sfr63 -
 __Lstack 0 0 STACK 2 stack -
+putch@character 77 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+_lcdI2CProtocol 54 0 CODE 0 text21 dist/default/production\InvertedPendulum.X.production.o
+__end_of_i2cProtocolStart 1FB4 0 CODE 0 text23 dist/default/production\InvertedPendulum.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 4 0 CODE 0 init -
@@ -562,16 +910,66 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
+__pstringtext1 2000 0 STRCODE 0 stringtext1 dist/default/production\InvertedPendulum.X.production.o
+__pstringtext2 0 0 STRCODE 0 stringtext2 dist/default/production\InvertedPendulum.X.production.o
+___aodiv@counter 71 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
 _SSP1CON1 190 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _SSP1STAT 18F 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+_SSP2CON1 19A 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+_SSP2CON3 19C 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+_SSP2STAT 199 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+___wmul 13E 0 CODE 0 text17 dist/default/production\InvertedPendulum.X.production.o
+___aomod@sign 72 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__S0 800 0 ABS 0 - -
-__S1 7C 0 ABS 0 - -
+isspace@c 70 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+__S0 1005 0 ABS 0 - -
+__S1 D5 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-__HidataCOMMON 0 0 ABS 0 idataCOMMON -
+_abs 10A 0 CODE 0 text11 dist/default/production\InvertedPendulum.X.production.o
+_pad 3A8 0 CODE 0 text5 dist/default/production\InvertedPendulum.X.production.o
+__size_of_i2cProtocolStart 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+_lcdInitialize 20E 0 CODE 0 text19 dist/default/production\InvertedPendulum.X.production.o
+___aodiv@sign 72 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+__end_of_abs 13E 0 CODE 0 text11 dist/default/production\InvertedPendulum.X.production.o
+__end_of_pad 45A 0 CODE 0 text5 dist/default/production\InvertedPendulum.X.production.o
 __Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\raimu\AppData\Local\Temp\sapk.o
+__size_of_lcdSendCharacterData 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\raimu\AppData\Local\Temp\s1oo.o
+strlen@a 73 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+strlen@s 74 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+__pdataBANK1 D1 0 BANK1 1 dataBANK1 dist/default/production\InvertedPendulum.X.production.o
+__size_of___wmul 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__end_of_lcdI2CProtocol 7C 0 CODE 0 text21 dist/default/production\InvertedPendulum.X.production.o
+__LbssBANK1 0 0 ABS 0 bssBANK1 -
+__Lstringtext1 0 0 ABS 0 stringtext1 -
+__Lstringtext2 0 0 ABS 0 stringtext2 -
+vfpfcnvrt@fmt 52 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+__end_of_lcdSendCharacterData 2000 0 CODE 0 text10 dist/default/production\InvertedPendulum.X.production.o
+pad@buf 2C 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+__ptext10 1FE4 0 CODE 0 text10 dist/default/production\InvertedPendulum.X.production.o
+__ptext11 10A 0 CODE 0 text11 dist/default/production\InvertedPendulum.X.production.o
+__ptext12 678 0 CODE 0 text12 dist/default/production\InvertedPendulum.X.production.o
+__ptext13 84C 0 CODE 0 text13 dist/default/production\InvertedPendulum.X.production.o
+__ptext14 51A 0 CODE 0 text14 dist/default/production\InvertedPendulum.X.production.o
+__ptext15 17C 0 CODE 0 text15 dist/default/production\InvertedPendulum.X.production.o
+__ptext16 A8 0 CODE 0 text16 dist/default/production\InvertedPendulum.X.production.o
+__ptext17 13E 0 CODE 0 text17 dist/default/production\InvertedPendulum.X.production.o
+__ptext18 36 0 CODE 0 text18 dist/default/production\InvertedPendulum.X.production.o
+__ptext19 20E 0 CODE 0 text19 dist/default/production\InvertedPendulum.X.production.o
+__ptext20 18 0 CODE 0 text20 dist/default/production\InvertedPendulum.X.production.o
+__ptext21 54 0 CODE 0 text21 dist/default/production\InvertedPendulum.X.production.o
+__ptext22 1FB4 0 CODE 0 text22 dist/default/production\InvertedPendulum.X.production.o
+__ptext23 1F9E 0 CODE 0 text23 dist/default/production\InvertedPendulum.X.production.o
+__ptext24 1FCA 0 CODE 0 text24 dist/default/production\InvertedPendulum.X.production.o
+__ptext25 45A 0 CODE 0 text25 dist/default/production\InvertedPendulum.X.production.o
+_atoi$885 22 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+_atoi$886 26 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+_atoi$887 24 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+___aodiv 84C 0 CODE 0 text13 dist/default/production\InvertedPendulum.X.production.o
+___aomod 678 0 CODE 0 text12 dist/default/production\InvertedPendulum.X.production.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -626,42 +1024,101 @@ __Lbank60 0 0 BANK60 1 bank60 -
 __Lbank61 0 0 BANK61 1 bank61 -
 __Lbank62 0 0 BANK62 1 bank62 -
 __Lbank63 0 0 BANK63 1 bank63 -
-__pmaintext E88 0 CODE 0 maintext dist/default/production\InvertedPendulum.X.production.o
+__pmaintext 266 0 CODE 0 maintext dist/default/production\InvertedPendulum.X.production.o
 __Lbigram 0 0 ABS 0 bigram -
+?_atoi 76 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+?_dtoa 34 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-__size_of_forward1 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+_printf 7C 0 CODE 0 text1 dist/default/production\InvertedPendulum.X.production.o
+lcdI2CProtocol@data 72 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+___wmul@multiplier 70 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+main@data CF 0 BANK1 1 cstackBANK1 dist/default/production\InvertedPendulum.X.production.o
+_strlen D8 0 CODE 0 text6 dist/default/production\InvertedPendulum.X.production.o
+__size_of_vfprintf 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+_SSP1CLKPPS 1EC5 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _SSP1DATPPS 1EC6 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+?_vfpfcnvrt 52 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__pbssCOMMON 7B 0 COMMON 1 bssCOMMON dist/default/production\InvertedPendulum.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackBANK1 0 0 ABS 0 cstackBANK1 -
+__size_of_lcdInitialize 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 __Lend_init 4 0 CODE 0 end_init -
+___aodiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+___aodiv@dividend 28 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+printf@ap 6F 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
 end_of_initialization FFA 0 CODE 0 cinit dist/default/production\InvertedPendulum.X.production.o
 __Hintentry 4 0 CODE 0 intentry -
+__size_of_printf 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+fputc@c 78 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+fputs@c 28 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+fputs@i 29 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+fputs@s 2B 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
 _TX1STAbits 11E 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _PPSLOCKbits 1E8F 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+lcdI2CProtocol@cont_code 71 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
 __Lstrings 0 0 ABS 0 strings -
+?___aodiv 20 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+?___aomod 20 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+vfprintf@fmt 65 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec -
-_forward1 F1E 0 CODE 0 text2 dist/default/production\InvertedPendulum.X.production.o
+__HbssBANK1 0 0 ABS 0 bssBANK1 -
+__size_of_strlen 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+vfpfcnvrt@ap 53 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+vfpfcnvrt@fp 64 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+vfpfcnvrt@ll 5A 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
 _OSCCON1bits 88D 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
-__ptext1 EA2 0 CODE 0 text1 dist/default/production\InvertedPendulum.X.production.o
-__ptext2 F1E 0 CODE 0 text2 dist/default/production\InvertedPendulum.X.production.o
-__end_of_forward1 FD8 0 CODE 0 text2 dist/default/production\InvertedPendulum.X.production.o
+__ptext1 7C 0 CODE 0 text1 dist/default/production\InvertedPendulum.X.production.o
+__ptext2 2C6 0 CODE 0 text2 dist/default/production\InvertedPendulum.X.production.o
+__ptext3 A4E 0 CODE 0 text3 dist/default/production\InvertedPendulum.X.production.o
+__ptext4 CEC 0 CODE 0 text4 dist/default/production\InvertedPendulum.X.production.o
+__ptext5 3A8 0 CODE 0 text5 dist/default/production\InvertedPendulum.X.production.o
+__ptext6 D8 0 CODE 0 text6 dist/default/production\InvertedPendulum.X.production.o
+__ptext7 1BE 0 CODE 0 text7 dist/default/production\InvertedPendulum.X.production.o
+__ptext8 328 0 CODE 0 text8 dist/default/production\InvertedPendulum.X.production.o
+__ptext9 1F92 0 CODE 0 text9 dist/default/production\InvertedPendulum.X.production.o
+__size_of_lcdSendCommandData 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+vfprintf@ap 67 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+vfprintf@fp 6A 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+vfprintf@cfmt 6B 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+__end_of_lcdInitialize 266 0 CODE 0 text19 dist/default/production\InvertedPendulum.X.production.o
+_vfprintf 2C6 0 CODE 0 text2 dist/default/production\InvertedPendulum.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
+_isdigit A8 0 CODE 0 text16 dist/default/production\InvertedPendulum.X.production.o
+_isspace 17C 0 CODE 0 text15 dist/default/production\InvertedPendulum.X.production.o
+_isspace$903 74 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
+__Hstringtext1 0 0 ABS 0 stringtext1 -
+__Hstringtext2 0 0 ABS 0 stringtext2 -
+__end_of_vfprintf 328 0 CODE 0 text2 dist/default/production\InvertedPendulum.X.production.o
+i2cProtocolSendData@data 70 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
 __end_of__initialization FFA 0 CODE 0 cinit dist/default/production\InvertedPendulum.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
+lcdSendCharacterData@data 76 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+__pidataBANK1 1F8A 0 CODE 0 idataBANK1 dist/default/production\InvertedPendulum.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
+__end_of_i2cProtocolStop 1FCA 0 CODE 0 text22 dist/default/production\InvertedPendulum.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+_SSP2ADD 197 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+_SSP2BUF 196 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 __Hend_init 8 0 CODE 0 end_init -
-forward1@order 73 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
-__end_of_init F1E 0 CODE 0 text1 dist/default/production\InvertedPendulum.X.production.o
-__end_of_main EA2 0 CODE 0 maintext dist/default/production\InvertedPendulum.X.production.o
+_ADCLKbits 98 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__end_of_atoi 678 0 CODE 0 text14 dist/default/production\InvertedPendulum.X.production.o
+__end_of_dtoa FC8 0 CODE 0 text4 dist/default/production\InvertedPendulum.X.production.o
+__end_of_init 51A 0 CODE 0 text25 dist/default/production\InvertedPendulum.X.production.o
+__end_of_main 2C6 0 CODE 0 maintext dist/default/production\InvertedPendulum.X.production.o
+isdigit@c 70 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+printf@fmt C9 0 BANK1 1 cstackBANK1 dist/default/production\InvertedPendulum.X.production.o
+_ADPCH 9E 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+_ADRES 8C 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__end_of_fputc 3A8 0 CODE 0 text8 dist/default/production\InvertedPendulum.X.production.o
+__end_of_fputs 20E 0 CODE 0 text7 dist/default/production\InvertedPendulum.X.production.o
 _LATB0 B8 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _LATB1 B9 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _LATB2 BA 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
@@ -670,11 +1127,37 @@ _RXPPS 1ECB 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _TRISA 11 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _TRISB 12 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 _TRISC 13 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__end_of_putch 1F9E 0 CODE 0 text9 dist/default/production\InvertedPendulum.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-__initialization FD8 0 CODE 0 cinit dist/default/production\InvertedPendulum.X.production.o
-__pdataCOMMON 77 0 COMMON 1 dataCOMMON dist/default/production\InvertedPendulum.X.production.o
+atoi@neg 20 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+_flags A6 0 BANK1 1 bssBANK1 dist/default/production\InvertedPendulum.X.production.o
+_fputc 328 0 CODE 0 text8 dist/default/production\InvertedPendulum.X.production.o
+_fputs 1BE 0 CODE 0 text7 dist/default/production\InvertedPendulum.X.production.o
+_putch 1F92 0 CODE 0 text9 dist/default/production\InvertedPendulum.X.production.o
+lcdLocateCursor@pos_x 78 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+lcdLocateCursor@pos_y 76 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+_width A2 0 BANK1 1 bssBANK1 dist/default/production\InvertedPendulum.X.production.o
+?_isdigit 70 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+?_isspace 70 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+__size_of_abs 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__size_of_pad 0 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+__HdataBANK1 0 0 ABS 0 dataBANK1 -
+atoi@n 27 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+atoi@s 76 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+__initialization FC8 0 CODE 0 cinit dist/default/production\InvertedPendulum.X.production.o
+__pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\InvertedPendulum.X.production.o
 _PPSLOCK 1E8F 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+___wmul@product 74 0 COMMON 1 cstackCOMMON dist/default/production\InvertedPendulum.X.production.o
+dtoa@d 34 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+dtoa@i 50 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+dtoa@n 48 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+dtoa@p 41 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+dtoa@s 46 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+dtoa@w 44 0 BANK0 1 cstackBANK0 dist/default/production\InvertedPendulum.X.production.o
+_i2cProtocolStop 1FB4 0 CODE 0 text22 dist/default/production\InvertedPendulum.X.production.o
+_SSP2CLKPPS 1EC8 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
+_SSP2DATPPS 1EC9 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -700,13 +1183,40 @@ _PPSLOCK 1E8F 0 ABS 0 - dist/default/production\InvertedPendulum.X.production.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7EC FD8 14 2
-text1 0 751 EA2 3E 2
-text2 0 78F F1E 5D 2
-idataCOMMON 0 740 E80 4 2
-maintext 0 744 E88 D 2
-cstackCOMMON 1 70 70 C 1
+cinit 0 7E4 FC8 1C 2
+text1 0 3E 7C 16 2
+text2 0 163 2C6 31 2
+text3 0 527 A4E 14F 2
+text4 0 676 CEC 16E 2
+text5 0 1D4 3A8 59 2
+text6 0 6C D8 19 2
+text7 0 DF 1BE 28 2
+text8 0 194 328 40 2
+text9 0 FC9 1F92 6 2
+text10 0 FF2 1FE4 E 2
+text11 0 85 10A 1A 2
+text12 0 33C 678 EA 2
+text13 0 426 84C 101 2
+text14 0 28D 51A AF 2
+text15 0 BE 17C 21 2
+text16 0 54 A8 18 2
+text17 0 9F 13E 1F 2
+text18 0 1B 36 F 2
+text19 0 107 20E 2C 2
+text20 0 C 18 F 2
+text21 0 2A 54 14 2
+text22 0 FDA 1FB4 B 2
+text23 0 FCF 1F9E B 2
+text24 0 FE5 1FCA D 2
+text25 0 22D 45A 60 2
+maintext 0 133 266 30 2
+cstackCOMMON 1 70 70 E 1
+cstackBANK0 1 20 20 50 1
+stringtext1 0 1000 2000 5 2
 reset_vec 0 0 0 4 2
+bssBANK1 1 A0 A0 35 1
+idataBANK1 0 FC5 1F8A 4 2
+clrtext 0 6 C 6 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

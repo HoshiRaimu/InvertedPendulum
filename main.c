@@ -40,10 +40,12 @@
 
 #include <xc.h>
 #include <stdio.h>
+#include <stdint.h>
 #include <math.h>
 #include "AQM0802.h"
 
 #define _XTAL_FREQ 32000000
+
 
 #define A1PHASE LATB0
 #define A1ENBL  LATB1
@@ -54,6 +56,7 @@
 #define A2ENBL  LATB5
 #define B2PHASE LATB6
 #define B2ENBL  LATB7
+
 
 void init(void);
 
@@ -75,7 +78,16 @@ void forward1(int t)
 
 void main(void) {
     init();
-    while(1) forward1(2000);
+    lcdInitialize();
+    __delay_ms(100);
+    while(1)
+    {
+        lcdLocateCursor(1, 1);
+        ADGO = 1;
+        while(ADGO);
+        int data = ADRES;
+        printf("%4d\n",data);
+    }
     return;
 }
 
@@ -89,11 +101,12 @@ void init()
     //ピンの設定
     ANSELA = 0b00000000;        //
     ANSELB = 0b00000000;        //
-    ANSELC = 0b00000000;        //
+    ANSELC = 0b10000000;        //
     TRISA  = 0b00000000;        //
-    TRISB  = 0b00000000;        //
-    TRISC  = 0b00010000;        //RC5を入力に設定
+    TRISB  = 0b00000011;        //RB0,RB1を入力に設定
+    TRISC  = 0b10010000;        //RC5を入力に設定
     
+    //SPIの設定
     SSP1CON1 = 0b00110000;          //SPIモードにし、Fosc / 4のクロック周波数を設定
     SSP1STAT = 0b00000000;          //受信サンプルを中央、立ち上がりエッジで送信、BFを設定
     
@@ -102,23 +115,37 @@ void init()
     //PEIE = 1 ;                      //周辺機器の割込みを許可
     //GIE  = 1 ;                      //全体の割り込みを許可
     
+    //I2Cの設定
+    SSP2STAT = 0x80;   //クロック信号は100kHzを使用
+    SSP2CON1 = 0x28;   //I2C通信のマスターモードを有効化
+    SSP2CON3 = 0x00;   //CON3はデフォルト設定
+    SSP2ADD  = 0x09;   //クロック信号速度を100kHzに設定
+    
+    //ADCの設定
+    ADCON0 = 0b10000100;
+    ADCLKbits.ADCCS = 0x00;
+    ADPCH = 0b010111;   //RC7を選択
+    ADREFbits.ADPREF = 0x00;
+    
+    
     //解除
     PPSLOCK = 0x55;
     PPSLOCK = 0xAA;
     PPSLOCKbits.PPSLOCKED = 0x00;
     
-    /*
-    RC7PPS     = 0x14;          //RC7をSCLに設定
-    RC6PPS     = 0x15;          //RC6をMOSIに設定
-    SSP1DATPPS = 0x15;          //RC5をMISOに設定
-    */
     //SPI
-    SSP1DATPPS = 0x14;              // SDI : RC4
-    RC3PPS = 0x14;                  // SCK : RC3
-    RC5PPS = 0x15;                  // SDO : RC5
+    //SCL:RC6, SDI:RC4, SDO:RC5
+    SSP1CLKPPS = 0x16;
+    RC6PPS = 0x14;
+    SSP1DATPPS = 0x14;
+    RC5PPS = 0x15;
     
     //I2C
-    
+    //SCL:RB1, SDI:RB0
+    SSP2DATPPS = 0x08;
+    RB0PPS = 0x17;
+    SSP2CLKPPS = 0x09;
+    RB1PPS = 0x16;
     
     //UART
     RXPPS  = 0x10;              //RC0をRXに設定

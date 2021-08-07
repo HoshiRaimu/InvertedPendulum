@@ -5,6 +5,8 @@
  * Created on 2021/08/06, 22:50
  */
 
+#include <stdint.h>
+
 #ifndef AQM0802_H
 #define	AQM0802_H
 

@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "AQM0802.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "AQM0802.c" 2
+# 1 "./AQM0802.h" 1
 
 
 
@@ -14,39 +15,129 @@
 
 
 
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = HFINT1
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
 
 
-#pragma config MCLRE = OFF
-#pragma config PWRTE = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = ON
-#pragma config BORV = LO
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config DEBUG = OFF
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
 
 
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
 
 
-#pragma config WRT = OFF
-#pragma config SCANE = available
-#pragma config LVP = OFF
+typedef short int16_t;
 
 
-#pragma config CP = OFF
-#pragma config CPD = OFF
 
+
+typedef __int24 int24_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
+# 8 "./AQM0802.h" 2
+# 27 "./AQM0802.h"
+void lcdInitialize(void);
+void lcdClearDisplay(void);
+void lcdSendCommandData(uint8_t);
+void lcdSendCharacterData(uint8_t);
+void lcdLocateCursor(uint8_t,uint8_t);
+
+
+void lcdI2CProtocol(uint8_t, uint8_t, uint8_t);
+
+
+void i2cProtocolStart(void);
+void i2cProtocolStop(void);
+void i2cProtocolSendData(uint8_t);
+uint8_t i2cProtocolCheckAck(void);
+# 1 "AQM0802.c" 2
 
 # 1 "C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\\pic\\include\\xc.h" 3
@@ -61,17 +152,7 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
-
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\features.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 3
@@ -80,10 +161,6 @@ extern double __fpnormalize(double);
 typedef long int wchar_t;
 # 122 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 168 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 204 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 2 3
 
 
@@ -153,92 +230,7 @@ extern void __builtin_software_breakpoint(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
 
-
-
-
-typedef short int16_t;
-# 173 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 209 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 5 "C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\\pic\\include\\builtins.h" 2 3
 
 
 #pragma intrinsic(__nop)
@@ -19758,7 +19750,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\\pic\\include\\xc.h" 2 3
-# 41 "main.c" 2
+# 2 "AQM0802.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
@@ -19898,505 +19890,140 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 42 "main.c" 2
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\math.h" 1 3
-# 15 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\math.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 33 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef float float_t;
-
-
-
-
-typedef double double_t;
-# 15 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\math.h" 2 3
-# 42 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\math.h" 3
-int __fpclassifyf(float);
-
-
-
-
-
-
-
-int __signbitf(float);
-# 59 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\math.h" 3
-double acos(double);
-float acosf(float);
-long double acosl(long double);
-
-
-
-double acosh(double);
-float acoshf(float);
-long double acoshl(long double);
-
-
-
-double asin(double);
-float asinf(float);
-long double asinl(long double);
-
-
-
-double asinh(double);
-float asinhf(float);
-long double asinhl(long double);
-
-
-
-double atan(double);
-float atanf(float);
-long double atanl(long double);
-
-
-
-double atan2(double, double);
-float atan2f(float, float);
-long double atan2l(long double, long double);
-
-
-
-double atanh(double);
-float atanhf(float);
-long double atanhl(long double);
-
-
-
-double cbrt(double);
-float cbrtf(float);
-long double cbrtl(long double);
-
-
-
-double ceil(double);
-float ceilf(float);
-long double ceill(long double);
-
-
-
-double copysign(double, double);
-float copysignf(float, float);
-long double copysignl(long double, long double);
-
-
-
-double cos(double);
-float cosf(float);
-long double cosl(long double);
-
-
-
-double cosh(double);
-float coshf(float);
-long double coshl(long double);
-
-
-
-double erf(double);
-float erff(float);
-long double erfl(long double);
-
-
-
-double erfc(double);
-float erfcf(float);
-long double erfcl(long double);
-
-
-
-double exp(double);
-float expf(float);
-long double expl(long double);
-
-
-
-double exp2(double);
-float exp2f(float);
-long double exp2l(long double);
-
-
-
-double expm1(double);
-float expm1f(float);
-long double expm1l(long double);
-
-
-
-double fabs(double);
-float fabsf(float);
-long double fabsl(long double);
-
-
-
-double fdim(double, double);
-float fdimf(float, float);
-long double fdiml(long double, long double);
-
-
-
-double floor(double);
-float floorf(float);
-long double floorl(long double);
-
-
-
-double fma(double, double, double);
-float fmaf(float, float, float);
-long double fmal(long double, long double, long double);
-
-
-
-double fmax(double, double);
-float fmaxf(float, float);
-long double fmaxl(long double, long double);
-
-
-
-double fmin(double, double);
-float fminf(float, float);
-long double fminl(long double, long double);
-
-
-
-double fmod(double, double);
-float fmodf(float, float);
-long double fmodl(long double, long double);
-
-
-
-double frexp(double, int *);
-float frexpf(float, int *);
-long double frexpl(long double, int *);
-
-
-
-double hypot(double, double);
-float hypotf(float, float);
-long double hypotl(long double, long double);
-
-
-
-int ilogb(double);
-int ilogbf(float);
-int ilogbl(long double);
-
-
-
-double ldexp(double, int);
-float ldexpf(float, int);
-long double ldexpl(long double, int);
-
-
-
-double lgamma(double);
-float lgammaf(float);
-long double lgammal(long double);
-
-
-
-long long llrint(double);
-long long llrintf(float);
-long long llrintl(long double);
-
-
-
-long long llround(double);
-long long llroundf(float);
-long long llroundl(long double);
-
-
-
-double log(double);
-float logf(float);
-long double logl(long double);
-
-
-
-double log10(double);
-float log10f(float);
-long double log10l(long double);
-
-
-
-double log1p(double);
-float log1pf(float);
-long double log1pl(long double);
-
-
-
-double log2(double);
-float log2f(float);
-long double log2l(long double);
-
-
-
-double logb(double);
-float logbf(float);
-long double logbl(long double);
-
-
-
-long lrint(double);
-long lrintf(float);
-long lrintl(long double);
-
-
-
-long lround(double);
-long lroundf(float);
-long lroundl(long double);
-
-
-
-double modf(double, double *);
-float modff(float, float *);
-long double modfl(long double, long double *);
-
-
-
-double nan(const char *);
-float nanf(const char *);
-long double nanl(const char *);
-
-
-
-double nearbyint(double);
-float nearbyintf(float);
-long double nearbyintl(long double);
-
-
-
-double nextafter(double, double);
-float nextafterf(float, float);
-long double nextafterl(long double, long double);
-
-
-
-double nexttoward(double, long double);
-float nexttowardf(float, long double);
-long double nexttowardl(long double, long double);
-
-
-
-
-double pow(double, double);
-__attribute__((nonreentrant)) float powf(float, float);
-long double powl(long double, long double);
-
-
-
-double remainder(double, double);
-float remainderf(float, float);
-long double remainderl(long double, long double);
-
-
-
-double remquo(double, double, int *);
-float remquof(float, float, int *);
-long double remquol(long double, long double, int *);
-
-
-
-double rint(double);
-float rintf(float);
-long double rintl(long double);
-
-
-
-double round(double);
-float roundf(float);
-long double roundl(long double);
-
-
-
-double scalbln(double, long);
-float scalblnf(float, long);
-long double scalblnl(long double, long);
-
-
-
-double scalbn(double, int);
-float scalbnf(float, int);
-long double scalbnl(long double, int);
-
-
-
-double sin(double);
-float sinf(float);
-long double sinl(long double);
-
-
-
-double sinh(double);
-float sinhf(float);
-long double sinhl(long double);
-
-
-
-double sqrt(double);
-float sqrtf(float);
-long double sqrtl(long double);
-
-
-
-double tan(double);
-float tanf(float);
-long double tanl(long double);
-
-
-
-double tanh(double);
-float tanhf(float);
-long double tanhl(long double);
-
-
-
-double tgamma(double);
-float tgammaf(float);
-long double tgammal(long double);
-
-
-
-double trunc(double);
-float truncf(float);
-long double truncl(long double);
-# 423 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\math.h" 3
-extern int signgam;
-
-double j0(double);
-double j1(double);
-double jn(int, double);
-
-double y0(double);
-double y1(double);
-double yn(int, double);
-# 44 "main.c" 2
-
-# 1 "./AQM0802.h" 1
-# 27 "./AQM0802.h"
-void lcdInitialize(void);
-void lcdClearDisplay(void);
-void lcdSendCommandData(uint8_t);
-void lcdSendCharacterData(uint8_t);
-void lcdLocateCursor(uint8_t,uint8_t);
-
-
-void lcdI2CProtocol(uint8_t, uint8_t, uint8_t);
-
-
-void i2cProtocolStart(void);
-void i2cProtocolStop(void);
-void i2cProtocolSendData(uint8_t);
-uint8_t i2cProtocolCheckAck(void);
-# 45 "main.c" 2
-# 61 "main.c"
-void init(void);
-
-
-void forward1(int t)
+# 3 "AQM0802.c" 2
+# 12 "AQM0802.c"
+void i2cProtocolStart()
 {
-  static uint8_t cnt = 0;
-  uint8_t order[4] = {12, 6, 3, 9};
 
-  LATB0 = ((order[cnt] & 0x08) >> 3);
-  LATB2 = ((order[cnt] & 0x04) >> 2);
-  LATB1 = ((order[cnt] & 0x02) >> 1);
-  LATB3 = (order[cnt] & 0x01);
-  _delay((unsigned long)((3000)*(32000000/4000000.0)));
 
-  cnt++;
-  if(cnt > 3) cnt = 0;
-}
 
-void main(void) {
-    init();
-    lcdInitialize();
-    _delay((unsigned long)((100)*(32000000/4000.0)));
-    while(1)
-    {
-        lcdLocateCursor(1, 1);
-        ADGO = 1;
-        while(ADGO);
-        int data = ADRES;
-        printf("%4d\n",data);
-    }
+
+    SSP2IF = 0;
+    SSP2CON2bits.SEN = 1;
+    while(SSP2IF == 0);
+    SSP2IF = 0;
+
     return;
 }
 
-void init()
+void i2cProtocolStop()
 {
 
-    OSCCON1bits.NOSC = 0b110;
-    OSCCON1bits.NDIV = 0b0000;
-    OSCFRQbits.HFFRQ = 0b110;
-
-
-    ANSELA = 0b00000000;
-    ANSELB = 0b00000000;
-    ANSELC = 0b10000000;
-    TRISA = 0b00000000;
-    TRISB = 0b00000011;
-    TRISC = 0b10010000;
-
-
-    SSP1CON1 = 0b00110000;
-    SSP1STAT = 0b00000000;
 
 
 
+    SSP2IF = 0;
+    SSP2CON2bits.PEN = 1;
+    while(SSP2IF == 0) {};
+    SSP2IF = 0;
+
+    return;
+}
+
+void i2cProtocolSendData(uint8_t data)
+{
+
+
+
+    SSP2IF = 0;
+    SSP2BUF = data;
+    while(SSP2IF == 0);
+    SSP2IF = 0;
+
+    return;
+}
+
+uint8_t i2cProtocolCheckAck()
+{
+    uint8_t ack_status;
+
+    if(SSP2CON2bits.ACKSTAT)
+    {
+        ack_status = 0xff;
+    }
+    else
+    {
+        ack_status = 0x00;
+    }
+
+    return ack_status;
+}
+
+void lcdI2CProtocol(uint8_t address, uint8_t cont_code, uint8_t data)
+{
+    i2cProtocolStart();
+    i2cProtocolSendData(address);
+    i2cProtocolSendData(cont_code);
+    i2cProtocolSendData(data);
+    i2cProtocolStop();
+
+    return;
+}
+
+void lcdSendCommandData(uint8_t command)
+{
+
+    lcdI2CProtocol(0x7c, 0x00, command);
 
 
 
 
-    SSP2STAT = 0x80;
-    SSP2CON1 = 0x28;
-    SSP2CON3 = 0x00;
-    SSP2ADD = 0x09;
+    _delay((unsigned long)((1)*(3200000/4000.0)));
 
+    return;
+}
 
-    ADCON0 = 0b10000100;
-    ADCLKbits.ADCCS = 0x00;
-    ADPCH = 0b010111;
-    ADREFbits.ADPREF = 0x00;
+void lcdSendCharacterData(uint8_t data)
+{
 
-
-
-    PPSLOCK = 0x55;
-    PPSLOCK = 0xAA;
-    PPSLOCKbits.PPSLOCKED = 0x00;
+    lcdI2CProtocol(0x7c, 0x40, data);
 
 
 
-    SSP1CLKPPS = 0x16;
-    RC6PPS = 0x14;
-    SSP1DATPPS = 0x14;
-    RC5PPS = 0x15;
 
 
 
-    SSP2DATPPS = 0x08;
-    RB0PPS = 0x17;
-    SSP2CLKPPS = 0x09;
-    RB1PPS = 0x16;
+    return;
+}
+
+void lcdInitialize()
+{
+
+    lcdSendCommandData(0x38);
+    lcdSendCommandData(0x39);
+    lcdSendCommandData(0x14);
+    lcdSendCommandData(0x70);
+    lcdSendCommandData(0x56);
+    lcdSendCommandData(0x6c);
 
 
-    RXPPS = 0x10;
-    RC1PPS = 0x10;
+    _delay((unsigned long)((200)*(3200000/4000.0)));
 
 
-    PPSLOCK = 0x55;
-    PPSLOCK = 0xAA;
-    PPSLOCKbits.PPSLOCKED = 0x00;
+    lcdSendCommandData(0x38);
+    lcdSendCommandData(0x0c);
+    lcdSendCommandData(0x01);
 
+    return;
+}
 
-    TX1STA = 0x20;
-    TX1STAbits.BRGH = 1;
-    RC1STA = 0x90;
-    BAUD1CON = 0x08;
-    SP1BRG = 832;
+void lcdClearDisplay()
+{
+    lcdSendCommandData(0x01);
 
+    return;
+}
 
+void lcdLocateCursor(uint8_t pos_x, uint8_t pos_y)
+{
+    lcdSendCommandData(0x80 + 0x40 * (pos_y - 1) + (pos_x - 1));
+
+    return;
+}
+
+void putch(char character)
+{
+    lcdSendCharacterData(character);
+
+    return;
 }
