@@ -20321,6 +20321,7 @@ void main(void) {
         ADGO = 1;
         while(ADGO);
         int data = ADRES;
+        _delay((unsigned long)((1)*(32000000/4000.0)));
         printf("%4d\n",data);
     }
     return;
@@ -20358,7 +20359,7 @@ void init()
 
 
     ADCON0 = 0b10000100;
-    ADCLKbits.ADCCS = 0x00;
+    ADCLKbits.ADCCS = 0x111111;
     ADPCH = 0b010111;
     ADREFbits.ADPREF = 0x00;
 

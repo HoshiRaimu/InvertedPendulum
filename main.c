@@ -86,6 +86,7 @@ void main(void) {
         ADGO = 1;
         while(ADGO);
         int data = ADRES;
+        __delay_ms(1);
         printf("%4d\n",data);
     }
     return;
@@ -123,7 +124,7 @@ void init()
     
     //ADCの設定
     ADCON0 = 0b10000100;
-    ADCLKbits.ADCCS = 0x00;
+    ADCLKbits.ADCCS = 0x111111;
     ADPCH = 0b010111;   //RC7を選択
     ADREFbits.ADPREF = 0x00;
     
