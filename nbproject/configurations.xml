@@ -6,6 +6,8 @@
                    projectFiles="true">
       <itemPath>AQM0802.h</itemPath>
       <itemPath>AQM0802.c</itemPath>
+      <itemPath>sensor.h</itemPath>
+      <itemPath>sensor.c</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

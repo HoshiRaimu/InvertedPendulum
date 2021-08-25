@@ -13,12 +13,8 @@ void i2cProtocolStart()
 {
     // SSP1CON2レジスタのSENビットを1に設定すると
     // スタートコンディションが生成される
-    // 発行が完了するとSSP1IFが1になるのでwhile文で待つ
-    
-    SSP2IF = 0;
     SSP2CON2bits.SEN = 1;
-    while(SSP2IF == 0);
-    SSP2IF = 0;
+    while(SSP2CON2bits.SEN);
     
     return;
 }
@@ -27,25 +23,18 @@ void i2cProtocolStop()
 {
     // SSP1CON2レジスタのPENビットを1に設定すると
     // ストップコンディションが生成される
-    // 発行が完了するとSSP1IFが1になるのでwhile文で待つ
-    
-    SSP2IF = 0;
     SSP2CON2bits.PEN = 1;
-    while(SSP2IF == 0) {};
-    SSP2IF = 0;
-    
+    while(SSP2CON2bits.PEN);
+
     return;
 }
 
 void i2cProtocolSendData(uint8_t data) 
 {
     // SSP1BUFに送信したいデータをセットすると、そのデータが送信される
-    // 発行が完了するとSSP1IFが1になるのでwhile文で待つ
-    
-    SSP2IF = 0;
     SSP2BUF = data;
-    while(SSP2IF == 0);
-    SSP2IF = 0;
+    //送信可能になるまで待ち
+    while(SSP2STATbits.RW);
     
     return;
 }
@@ -138,9 +127,12 @@ void lcdLocateCursor(uint8_t pos_x, uint8_t pos_y)
     return;
 }
 
-void putch(char character) 
+void putch(uint8_t data) 
 {
-    lcdSendCharacterData(character);
+    //lcdSendCharacterData(character);
+    
+    while(!TRMT);
+    TX1REG = data;
     
     return;
 }

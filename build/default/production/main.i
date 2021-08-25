@@ -41,7 +41,7 @@
 
 #pragma config WRT = OFF
 #pragma config SCANE = available
-#pragma config LVP = OFF
+#pragma config LVP = ON
 
 
 #pragma config CP = OFF
@@ -20292,37 +20292,41 @@ void i2cProtocolStop(void);
 void i2cProtocolSendData(uint8_t);
 uint8_t i2cProtocolCheckAck(void);
 # 45 "main.c" 2
-# 61 "main.c"
+
+
+
+
 void init(void);
 
-
-void forward1(int t)
+uint8_t num = 0;
+void __attribute__((picinterrupt(("")))) uart(void)
 {
-  static uint8_t cnt = 0;
-  uint8_t order[4] = {12, 6, 3, 9};
-
-  LATB0 = ((order[cnt] & 0x08) >> 3);
-  LATB2 = ((order[cnt] & 0x04) >> 2);
-  LATB1 = ((order[cnt] & 0x02) >> 1);
-  LATB3 = (order[cnt] & 0x01);
-  _delay((unsigned long)((3000)*(32000000/4000000.0)));
-
-  cnt++;
-  if(cnt > 3) cnt = 0;
+    if(RCIF)
+    {
+        num = RCREG;
+        RCIF = 0;
+    }
 }
-
+# 77 "main.c"
 void main(void) {
     init();
     lcdInitialize();
     _delay((unsigned long)((100)*(32000000/4000.0)));
+
+
+
+
+
+    printf("SF,1\n");
+    printf("SR,32000000\n");
+    printf("R,1\n");
+    _delay((unsigned long)((3000)*(32000000/4000.0)));
+    printf("A\n");
+# 99 "main.c"
     while(1)
     {
-        lcdLocateCursor(1, 1);
-        ADGO = 1;
-        while(ADGO);
-        int data = ADRES;
-        _delay((unsigned long)((1)*(32000000/4000.0)));
-        printf("%4d\n",data);
+        CCPR1H = 90;
+# 126 "main.c"
     }
     return;
 }
@@ -20340,7 +20344,7 @@ void init()
     ANSELC = 0b10000000;
     TRISA = 0b00000000;
     TRISB = 0b00000011;
-    TRISC = 0b10010000;
+    TRISC = 0b10010001;
 
 
     SSP1CON1 = 0b00110000;
@@ -20397,7 +20401,55 @@ void init()
     TX1STAbits.BRGH = 1;
     RC1STA = 0x90;
     BAUD1CON = 0x08;
-    SP1BRG = 832;
+    SP1BRG = 68;
 
 
+
+    T2CLKCONbits.CS = 0b0001;
+    T2CONbits.CKPS = 0b111;
+    PR2 = 63;
+
+
+    RB5PPS = 0x09;
+    CCPTMRS0bits.C1TSEL = 0b01;
+    CCP1CONbits.EN = 1;
+    CCP1CONbits.FMT = 1;
+    CCP1CONbits.MODE = 0b1111;
+    CCPR1L = 0;
+    CCPR1H = 0;
+
+
+    RB4PPS = 0x0A;
+    CCPTMRS0bits.C2TSEL = 0b01;
+    CCP2CONbits.EN = 1;
+    CCP2CONbits.FMT = 1;
+    CCP2CONbits.MODE = 0b1111;
+    CCPR2L = 0;
+    CCPR2H = 0;
+
+
+    RB3PPS = 0x0B;
+    CCPTMRS0bits.C3TSEL = 0b01;
+    CCP3CONbits.EN = 1;
+    CCP3CONbits.FMT = 1;
+    CCP3CONbits.MODE = 0b1111;
+    CCPR3L = 0;
+    CCPR3H = 0;
+
+
+    RB2PPS = 0x0C;
+    CCPTMRS0bits.C4TSEL = 0b01;
+    CCP4CONbits.EN = 1;
+    CCP4CONbits.FMT = 1;
+    CCP4CONbits.MODE = 0b1111;
+    CCPR4L = 0;
+    CCPR4H = 0;
+
+
+    TMR2ON = 1;
+
+    RCIF = 0;
+    RCIE = 1;
+    PEIE = 1;
+    GIE = 1;
 }

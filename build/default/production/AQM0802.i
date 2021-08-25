@@ -19896,12 +19896,8 @@ void i2cProtocolStart()
 {
 
 
-
-
-    SSP2IF = 0;
     SSP2CON2bits.SEN = 1;
-    while(SSP2IF == 0);
-    SSP2IF = 0;
+    while(SSP2CON2bits.SEN);
 
     return;
 }
@@ -19910,12 +19906,8 @@ void i2cProtocolStop()
 {
 
 
-
-
-    SSP2IF = 0;
     SSP2CON2bits.PEN = 1;
-    while(SSP2IF == 0) {};
-    SSP2IF = 0;
+    while(SSP2CON2bits.PEN);
 
     return;
 }
@@ -19923,12 +19915,9 @@ void i2cProtocolStop()
 void i2cProtocolSendData(uint8_t data)
 {
 
-
-
-    SSP2IF = 0;
     SSP2BUF = data;
-    while(SSP2IF == 0);
-    SSP2IF = 0;
+
+    while(SSP2STATbits.RW);
 
     return;
 }
@@ -20021,9 +20010,12 @@ void lcdLocateCursor(uint8_t pos_x, uint8_t pos_y)
     return;
 }
 
-void putch(char character)
+void putch(uint8_t data)
 {
-    lcdSendCharacterData(character);
+
+
+    while(!TRMT);
+    TX1REG = data;
 
     return;
 }

@@ -1,8 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"41289 C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h
-[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 41289: extern volatile __bit SSP2IF __attribute__((address(0x387A)));
-[v _SSP2IF `Vb ~T0 @X0 0 e@14458 ]
-"5986
+"5986 C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h
 [; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5986:     struct {
 [s S279 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S279 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
@@ -32,10 +29,83 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5286
 [; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5286: extern volatile unsigned char SSP2BUF __attribute__((address(0x196)));
 [v _SSP2BUF `Vuc ~T0 @X0 0 e@406 ]
+"5502
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5502:     struct {
+[s S259 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S259 . BF UA R_nW S P D_nA CKE SMP ]
+"5512
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5512:     struct {
+[s S260 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S260 . . R_W . D_A ]
+"5518
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5518:     struct {
+[s S261 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S261 . . nW . nA ]
+"5524
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5524:     struct {
+[s S262 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S262 . . nWRITE . nADDRESS ]
+"5530
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5530:     struct {
+[s S263 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S263 . . READ_WRITE . DATA_ADDRESS ]
+"5536
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5536:     struct {
+[s S264 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S264 . . I2C_READ I2C_START I2C_STOP I2C_DAT ]
+"5543
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5543:     struct {
+[s S265 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S265 . BF2 UA2 R START STOP D CKE2 SMP2 ]
+"5553
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5553:     struct {
+[s S266 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S266 . . RW START2 STOP2 DA ]
+"5560
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5560:     struct {
+[s S267 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S267 . . RW2 I2C_START2 I2C_STOP2 DA2 ]
+"5567
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5567:     struct {
+[s S268 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S268 . . I2C_READ2 S2 P2 DATA_ADDRESS2 ]
+"5574
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5574:     struct {
+[s S269 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S269 . . READ_WRITE2 . D_A2 ]
+"5580
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5580:     struct {
+[s S270 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S270 . . R_W2 . D_nA2 ]
+"5586
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5586:     struct {
+[s S271 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S271 . . R_nW2 . I2C_DAT2 ]
+"5592
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5592:     struct {
+[s S272 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S272 . . nW2 . nA2 ]
+"5598
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5598:     struct {
+[s S273 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S273 . . nWRITE2 . nADDRESS2 ]
+"5501
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5501: typedef union {
+[u S258 `S259 1 `S260 1 `S261 1 `S262 1 `S263 1 `S264 1 `S265 1 `S266 1 `S267 1 `S268 1 `S269 1 `S270 1 `S271 1 `S272 1 `S273 1 ]
+[n S258 . . . . . . . . . . . . . . . . ]
+"5605
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 5605: extern volatile SSP2STATbits_t SSP2STATbits __attribute__((address(0x199)));
+[v _SSP2STATbits `VS258 ~T0 @X0 0 e@409 ]
 [v F201 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\builtins.h
 [v __delay `JF201 ~T0 @X0 0 e ]
 [p i __delay ]
+"42471 C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 42471: extern volatile __bit TRMT __attribute__((address(0x8F1)));
+[v _TRMT `Vb ~T0 @X0 0 e@2289 ]
+"3552
+[; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 3552: extern volatile unsigned char TX1REG __attribute__((address(0x11A)));
+[v _TX1REG `Vuc ~T0 @X0 0 e@282 ]
 "55 C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h
 [; ;C:/Users/raimu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18857.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1595,336 +1665,323 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _i2cProtocolStart ]
 [f ]
-"18
-[; ;AQM0802.c: 18:     SSP2IF = 0;
-[e = _SSP2IF -> -> 0 `i `b ]
-"19
-[; ;AQM0802.c: 19:     SSP2CON2bits.SEN = 1;
+"16
+[; ;AQM0802.c: 16:     SSP2CON2bits.SEN = 1;
 [e = . . _SSP2CON2bits 0 0 -> -> 1 `i `uc ]
-"20
-[; ;AQM0802.c: 20:     while(SSP2IF == 0);
+"17
+[; ;AQM0802.c: 17:     while(SSP2CON2bits.SEN);
 [e $U 1560  ]
 [e :U 1561 ]
 [e :U 1560 ]
-[e $ == -> _SSP2IF `i -> 0 `i 1561  ]
+[e $ != -> . . _SSP2CON2bits 0 0 `i -> 0 `i 1561  ]
 [e :U 1562 ]
-"21
-[; ;AQM0802.c: 21:     SSP2IF = 0;
-[e = _SSP2IF -> -> 0 `i `b ]
-"23
-[; ;AQM0802.c: 23:     return;
+"19
+[; ;AQM0802.c: 19:     return;
 [e $UE 1559  ]
-"24
-[; ;AQM0802.c: 24: }
+"20
+[; ;AQM0802.c: 20: }
 [e :UE 1559 ]
 }
-"26
-[; ;AQM0802.c: 26: void i2cProtocolStop()
+"22
+[; ;AQM0802.c: 22: void i2cProtocolStop()
 [v _i2cProtocolStop `(v ~T0 @X0 1 ef ]
-"27
-[; ;AQM0802.c: 27: {
+"23
+[; ;AQM0802.c: 23: {
 {
 [e :U _i2cProtocolStop ]
 [f ]
-"32
-[; ;AQM0802.c: 32:     SSP2IF = 0;
-[e = _SSP2IF -> -> 0 `i `b ]
-"33
-[; ;AQM0802.c: 33:     SSP2CON2bits.PEN = 1;
+"26
+[; ;AQM0802.c: 26:     SSP2CON2bits.PEN = 1;
 [e = . . _SSP2CON2bits 0 2 -> -> 1 `i `uc ]
-"34
-[; ;AQM0802.c: 34:     while(SSP2IF == 0) {};
+"27
+[; ;AQM0802.c: 27:     while(SSP2CON2bits.PEN);
 [e $U 1564  ]
 [e :U 1565 ]
-{
-}
 [e :U 1564 ]
-[e $ == -> _SSP2IF `i -> 0 `i 1565  ]
+[e $ != -> . . _SSP2CON2bits 0 2 `i -> 0 `i 1565  ]
 [e :U 1566 ]
-"35
-[; ;AQM0802.c: 35:     SSP2IF = 0;
-[e = _SSP2IF -> -> 0 `i `b ]
-"37
-[; ;AQM0802.c: 37:     return;
+"29
+[; ;AQM0802.c: 29:     return;
 [e $UE 1563  ]
-"38
-[; ;AQM0802.c: 38: }
+"30
+[; ;AQM0802.c: 30: }
 [e :UE 1563 ]
 }
-"40
-[; ;AQM0802.c: 40: void i2cProtocolSendData(uint8_t data)
+"32
+[; ;AQM0802.c: 32: void i2cProtocolSendData(uint8_t data)
 [v _i2cProtocolSendData `(v ~T0 @X0 1 ef1`uc ]
-"41
-[; ;AQM0802.c: 41: {
+"33
+[; ;AQM0802.c: 33: {
 {
 [e :U _i2cProtocolSendData ]
-"40
-[; ;AQM0802.c: 40: void i2cProtocolSendData(uint8_t data)
+"32
+[; ;AQM0802.c: 32: void i2cProtocolSendData(uint8_t data)
 [v _data `uc ~T0 @X0 1 r1 ]
-"41
-[; ;AQM0802.c: 41: {
+"33
+[; ;AQM0802.c: 33: {
 [f ]
-"45
-[; ;AQM0802.c: 45:     SSP2IF = 0;
-[e = _SSP2IF -> -> 0 `i `b ]
-"46
-[; ;AQM0802.c: 46:     SSP2BUF = data;
+"35
+[; ;AQM0802.c: 35:     SSP2BUF = data;
 [e = _SSP2BUF _data ]
-"47
-[; ;AQM0802.c: 47:     while(SSP2IF == 0);
+"37
+[; ;AQM0802.c: 37:     while(SSP2STATbits.RW);
 [e $U 1568  ]
 [e :U 1569 ]
 [e :U 1568 ]
-[e $ == -> _SSP2IF `i -> 0 `i 1569  ]
+[e $ != -> . . _SSP2STATbits 7 1 `i -> 0 `i 1569  ]
 [e :U 1570 ]
-"48
-[; ;AQM0802.c: 48:     SSP2IF = 0;
-[e = _SSP2IF -> -> 0 `i `b ]
-"50
-[; ;AQM0802.c: 50:     return;
+"39
+[; ;AQM0802.c: 39:     return;
 [e $UE 1567  ]
-"51
-[; ;AQM0802.c: 51: }
+"40
+[; ;AQM0802.c: 40: }
 [e :UE 1567 ]
 }
-"53
-[; ;AQM0802.c: 53: uint8_t i2cProtocolCheckAck()
+"42
+[; ;AQM0802.c: 42: uint8_t i2cProtocolCheckAck()
 [v _i2cProtocolCheckAck `(uc ~T0 @X0 1 ef ]
-"54
-[; ;AQM0802.c: 54: {
+"43
+[; ;AQM0802.c: 43: {
 {
 [e :U _i2cProtocolCheckAck ]
 [f ]
-"55
-[; ;AQM0802.c: 55:     uint8_t ack_status;
+"44
+[; ;AQM0802.c: 44:     uint8_t ack_status;
 [v _ack_status `uc ~T0 @X0 1 a ]
-"57
-[; ;AQM0802.c: 57:     if(SSP2CON2bits.ACKSTAT)
+"46
+[; ;AQM0802.c: 46:     if(SSP2CON2bits.ACKSTAT)
 [e $ ! != -> . . _SSP2CON2bits 0 6 `i -> 0 `i 1572  ]
-"58
-[; ;AQM0802.c: 58:     {
+"47
+[; ;AQM0802.c: 47:     {
 {
-"59
-[; ;AQM0802.c: 59:         ack_status = 0xff;
+"48
+[; ;AQM0802.c: 48:         ack_status = 0xff;
 [e = _ack_status -> -> 255 `i `uc ]
-"60
-[; ;AQM0802.c: 60:     }
+"49
+[; ;AQM0802.c: 49:     }
 }
 [e $U 1573  ]
-"61
-[; ;AQM0802.c: 61:     else
+"50
+[; ;AQM0802.c: 50:     else
 [e :U 1572 ]
-"62
-[; ;AQM0802.c: 62:     {
+"51
+[; ;AQM0802.c: 51:     {
 {
-"63
-[; ;AQM0802.c: 63:         ack_status = 0x00;
+"52
+[; ;AQM0802.c: 52:         ack_status = 0x00;
 [e = _ack_status -> -> 0 `i `uc ]
-"64
-[; ;AQM0802.c: 64:     }
+"53
+[; ;AQM0802.c: 53:     }
 }
 [e :U 1573 ]
-"66
-[; ;AQM0802.c: 66:     return ack_status;
+"55
+[; ;AQM0802.c: 55:     return ack_status;
 [e ) _ack_status ]
 [e $UE 1571  ]
-"67
-[; ;AQM0802.c: 67: }
+"56
+[; ;AQM0802.c: 56: }
 [e :UE 1571 ]
 }
-"69
-[; ;AQM0802.c: 69: void lcdI2CProtocol(uint8_t address, uint8_t cont_code, uint8_t data)
+"58
+[; ;AQM0802.c: 58: void lcdI2CProtocol(uint8_t address, uint8_t cont_code, uint8_t data)
 [v _lcdI2CProtocol `(v ~T0 @X0 1 ef3`uc`uc`uc ]
-"70
-[; ;AQM0802.c: 70: {
+"59
+[; ;AQM0802.c: 59: {
 {
 [e :U _lcdI2CProtocol ]
-"69
-[; ;AQM0802.c: 69: void lcdI2CProtocol(uint8_t address, uint8_t cont_code, uint8_t data)
+"58
+[; ;AQM0802.c: 58: void lcdI2CProtocol(uint8_t address, uint8_t cont_code, uint8_t data)
 [v _address `uc ~T0 @X0 1 r1 ]
 [v _cont_code `uc ~T0 @X0 1 r2 ]
 [v _data `uc ~T0 @X0 1 r3 ]
+"59
+[; ;AQM0802.c: 59: {
+[f ]
+"60
+[; ;AQM0802.c: 60:     i2cProtocolStart();
+[e ( _i2cProtocolStart ..  ]
+"61
+[; ;AQM0802.c: 61:     i2cProtocolSendData(address);
+[e ( _i2cProtocolSendData (1 _address ]
+"62
+[; ;AQM0802.c: 62:     i2cProtocolSendData(cont_code);
+[e ( _i2cProtocolSendData (1 _cont_code ]
+"63
+[; ;AQM0802.c: 63:     i2cProtocolSendData(data);
+[e ( _i2cProtocolSendData (1 _data ]
+"64
+[; ;AQM0802.c: 64:     i2cProtocolStop();
+[e ( _i2cProtocolStop ..  ]
+"66
+[; ;AQM0802.c: 66:     return;
+[e $UE 1574  ]
+"67
+[; ;AQM0802.c: 67: }
+[e :UE 1574 ]
+}
+"69
+[; ;AQM0802.c: 69: void lcdSendCommandData(uint8_t command)
+[v _lcdSendCommandData `(v ~T0 @X0 1 ef1`uc ]
+"70
+[; ;AQM0802.c: 70: {
+{
+[e :U _lcdSendCommandData ]
+"69
+[; ;AQM0802.c: 69: void lcdSendCommandData(uint8_t command)
+[v _command `uc ~T0 @X0 1 r1 ]
 "70
 [; ;AQM0802.c: 70: {
 [f ]
-"71
-[; ;AQM0802.c: 71:     i2cProtocolStart();
-[e ( _i2cProtocolStart ..  ]
 "72
-[; ;AQM0802.c: 72:     i2cProtocolSendData(address);
-[e ( _i2cProtocolSendData (1 _address ]
-"73
-[; ;AQM0802.c: 73:     i2cProtocolSendData(cont_code);
-[e ( _i2cProtocolSendData (1 _cont_code ]
-"74
-[; ;AQM0802.c: 74:     i2cProtocolSendData(data);
-[e ( _i2cProtocolSendData (1 _data ]
-"75
-[; ;AQM0802.c: 75:     i2cProtocolStop();
-[e ( _i2cProtocolStop ..  ]
-"77
-[; ;AQM0802.c: 77:     return;
-[e $UE 1574  ]
-"78
-[; ;AQM0802.c: 78: }
-[e :UE 1574 ]
-}
-"80
-[; ;AQM0802.c: 80: void lcdSendCommandData(uint8_t command)
-[v _lcdSendCommandData `(v ~T0 @X0 1 ef1`uc ]
-"81
-[; ;AQM0802.c: 81: {
-{
-[e :U _lcdSendCommandData ]
-"80
-[; ;AQM0802.c: 80: void lcdSendCommandData(uint8_t command)
-[v _command `uc ~T0 @X0 1 r1 ]
-"81
-[; ;AQM0802.c: 81: {
-[f ]
-"83
-[; ;AQM0802.c: 83:     lcdI2CProtocol(0x7c, 0x00, command);
+[; ;AQM0802.c: 72:     lcdI2CProtocol(0x7c, 0x00, command);
 [e ( _lcdI2CProtocol (3 , , -> -> 124 `i `uc -> -> 0 `i `uc _command ]
-"88
-[; ;AQM0802.c: 88:     _delay((unsigned long)((1)*(3200000/4000.0)));
+"77
+[; ;AQM0802.c: 77:     _delay((unsigned long)((1)*(3200000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 3200000 `l `d .4000.0 `ul ]
-"90
-[; ;AQM0802.c: 90:     return;
+"79
+[; ;AQM0802.c: 79:     return;
 [e $UE 1575  ]
-"91
-[; ;AQM0802.c: 91: }
+"80
+[; ;AQM0802.c: 80: }
 [e :UE 1575 ]
 }
-"93
-[; ;AQM0802.c: 93: void lcdSendCharacterData(uint8_t data)
+"82
+[; ;AQM0802.c: 82: void lcdSendCharacterData(uint8_t data)
 [v _lcdSendCharacterData `(v ~T0 @X0 1 ef1`uc ]
-"94
-[; ;AQM0802.c: 94: {
+"83
+[; ;AQM0802.c: 83: {
 {
 [e :U _lcdSendCharacterData ]
-"93
-[; ;AQM0802.c: 93: void lcdSendCharacterData(uint8_t data)
+"82
+[; ;AQM0802.c: 82: void lcdSendCharacterData(uint8_t data)
 [v _data `uc ~T0 @X0 1 r1 ]
-"94
-[; ;AQM0802.c: 94: {
+"83
+[; ;AQM0802.c: 83: {
 [f ]
-"96
-[; ;AQM0802.c: 96:     lcdI2CProtocol(0x7c, 0x40, data);
+"85
+[; ;AQM0802.c: 85:     lcdI2CProtocol(0x7c, 0x40, data);
 [e ( _lcdI2CProtocol (3 , , -> -> 124 `i `uc -> -> 64 `i `uc _data ]
-"103
-[; ;AQM0802.c: 103:     return;
+"92
+[; ;AQM0802.c: 92:     return;
 [e $UE 1576  ]
-"104
-[; ;AQM0802.c: 104: }
+"93
+[; ;AQM0802.c: 93: }
 [e :UE 1576 ]
 }
-"106
-[; ;AQM0802.c: 106: void lcdInitialize()
+"95
+[; ;AQM0802.c: 95: void lcdInitialize()
 [v _lcdInitialize `(v ~T0 @X0 1 ef ]
-"107
-[; ;AQM0802.c: 107: {
+"96
+[; ;AQM0802.c: 96: {
 {
 [e :U _lcdInitialize ]
 [f ]
+"98
+[; ;AQM0802.c: 98:     lcdSendCommandData(0x38);
+[e ( _lcdSendCommandData (1 -> -> 56 `i `uc ]
+"99
+[; ;AQM0802.c: 99:     lcdSendCommandData(0x39);
+[e ( _lcdSendCommandData (1 -> -> 57 `i `uc ]
+"100
+[; ;AQM0802.c: 100:     lcdSendCommandData(0x14);
+[e ( _lcdSendCommandData (1 -> -> 20 `i `uc ]
+"101
+[; ;AQM0802.c: 101:     lcdSendCommandData(0x70);
+[e ( _lcdSendCommandData (1 -> -> 112 `i `uc ]
+"102
+[; ;AQM0802.c: 102:     lcdSendCommandData(0x56);
+[e ( _lcdSendCommandData (1 -> -> 86 `i `uc ]
+"103
+[; ;AQM0802.c: 103:     lcdSendCommandData(0x6c);
+[e ( _lcdSendCommandData (1 -> -> 108 `i `uc ]
+"106
+[; ;AQM0802.c: 106:     _delay((unsigned long)((200)*(3200000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 3200000 `l `d .4000.0 `ul ]
 "109
 [; ;AQM0802.c: 109:     lcdSendCommandData(0x38);
 [e ( _lcdSendCommandData (1 -> -> 56 `i `uc ]
 "110
-[; ;AQM0802.c: 110:     lcdSendCommandData(0x39);
-[e ( _lcdSendCommandData (1 -> -> 57 `i `uc ]
-"111
-[; ;AQM0802.c: 111:     lcdSendCommandData(0x14);
-[e ( _lcdSendCommandData (1 -> -> 20 `i `uc ]
-"112
-[; ;AQM0802.c: 112:     lcdSendCommandData(0x70);
-[e ( _lcdSendCommandData (1 -> -> 112 `i `uc ]
-"113
-[; ;AQM0802.c: 113:     lcdSendCommandData(0x56);
-[e ( _lcdSendCommandData (1 -> -> 86 `i `uc ]
-"114
-[; ;AQM0802.c: 114:     lcdSendCommandData(0x6c);
-[e ( _lcdSendCommandData (1 -> -> 108 `i `uc ]
-"117
-[; ;AQM0802.c: 117:     _delay((unsigned long)((200)*(3200000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 3200000 `l `d .4000.0 `ul ]
-"120
-[; ;AQM0802.c: 120:     lcdSendCommandData(0x38);
-[e ( _lcdSendCommandData (1 -> -> 56 `i `uc ]
-"121
-[; ;AQM0802.c: 121:     lcdSendCommandData(0x0c);
+[; ;AQM0802.c: 110:     lcdSendCommandData(0x0c);
 [e ( _lcdSendCommandData (1 -> -> 12 `i `uc ]
-"122
-[; ;AQM0802.c: 122:     lcdSendCommandData(0x01);
+"111
+[; ;AQM0802.c: 111:     lcdSendCommandData(0x01);
 [e ( _lcdSendCommandData (1 -> -> 1 `i `uc ]
-"124
-[; ;AQM0802.c: 124:     return;
+"113
+[; ;AQM0802.c: 113:     return;
 [e $UE 1577  ]
-"125
-[; ;AQM0802.c: 125: }
+"114
+[; ;AQM0802.c: 114: }
 [e :UE 1577 ]
 }
-"127
-[; ;AQM0802.c: 127: void lcdClearDisplay()
+"116
+[; ;AQM0802.c: 116: void lcdClearDisplay()
 [v _lcdClearDisplay `(v ~T0 @X0 1 ef ]
-"128
-[; ;AQM0802.c: 128: {
+"117
+[; ;AQM0802.c: 117: {
 {
 [e :U _lcdClearDisplay ]
 [f ]
-"129
-[; ;AQM0802.c: 129:     lcdSendCommandData(0x01);
+"118
+[; ;AQM0802.c: 118:     lcdSendCommandData(0x01);
 [e ( _lcdSendCommandData (1 -> -> 1 `i `uc ]
-"131
-[; ;AQM0802.c: 131:     return;
+"120
+[; ;AQM0802.c: 120:     return;
 [e $UE 1578  ]
-"132
-[; ;AQM0802.c: 132: }
+"121
+[; ;AQM0802.c: 121: }
 [e :UE 1578 ]
 }
-"134
-[; ;AQM0802.c: 134: void lcdLocateCursor(uint8_t pos_x, uint8_t pos_y)
+"123
+[; ;AQM0802.c: 123: void lcdLocateCursor(uint8_t pos_x, uint8_t pos_y)
 [v _lcdLocateCursor `(v ~T0 @X0 1 ef2`uc`uc ]
-"135
-[; ;AQM0802.c: 135: {
+"124
+[; ;AQM0802.c: 124: {
 {
 [e :U _lcdLocateCursor ]
-"134
-[; ;AQM0802.c: 134: void lcdLocateCursor(uint8_t pos_x, uint8_t pos_y)
+"123
+[; ;AQM0802.c: 123: void lcdLocateCursor(uint8_t pos_x, uint8_t pos_y)
 [v _pos_x `uc ~T0 @X0 1 r1 ]
 [v _pos_y `uc ~T0 @X0 1 r2 ]
-"135
-[; ;AQM0802.c: 135: {
+"124
+[; ;AQM0802.c: 124: {
 [f ]
-"136
-[; ;AQM0802.c: 136:     lcdSendCommandData(0x80 + 0x40 * (pos_y - 1) + (pos_x - 1));
+"125
+[; ;AQM0802.c: 125:     lcdSendCommandData(0x80 + 0x40 * (pos_y - 1) + (pos_x - 1));
 [e ( _lcdSendCommandData (1 -> + + -> 128 `i * -> 64 `i - -> _pos_y `i -> 1 `i - -> _pos_x `i -> 1 `i `uc ]
-"138
-[; ;AQM0802.c: 138:     return;
+"127
+[; ;AQM0802.c: 127:     return;
 [e $UE 1579  ]
-"139
-[; ;AQM0802.c: 139: }
+"128
+[; ;AQM0802.c: 128: }
 [e :UE 1579 ]
 }
-"141
-[; ;AQM0802.c: 141: void putch(char character)
+"130
+[; ;AQM0802.c: 130: void putch(uint8_t data)
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
-"142
-[; ;AQM0802.c: 142: {
+"131
+[; ;AQM0802.c: 131: {
 {
 [e :U _putch ]
-"141
-[; ;AQM0802.c: 141: void putch(char character)
-[v _character `uc ~T0 @X0 1 r1 ]
-"142
-[; ;AQM0802.c: 142: {
+"130
+[; ;AQM0802.c: 130: void putch(uint8_t data)
+[v _data `uc ~T0 @X0 1 r1 ]
+"131
+[; ;AQM0802.c: 131: {
 [f ]
-"143
-[; ;AQM0802.c: 143:     lcdSendCharacterData(character);
-[e ( _lcdSendCharacterData (1 -> _character `uc ]
-"145
-[; ;AQM0802.c: 145:     return;
+"134
+[; ;AQM0802.c: 134:     while(!TRMT);
+[e $U 1581  ]
+[e :U 1582 ]
+[e :U 1581 ]
+[e $ ! _TRMT 1582  ]
+[e :U 1583 ]
+"135
+[; ;AQM0802.c: 135:     TX1REG = data;
+[e = _TX1REG _data ]
+"137
+[; ;AQM0802.c: 137:     return;
 [e $UE 1580  ]
-"146
-[; ;AQM0802.c: 146: }
+"138
+[; ;AQM0802.c: 138: }
 [e :UE 1580 ]
 }
